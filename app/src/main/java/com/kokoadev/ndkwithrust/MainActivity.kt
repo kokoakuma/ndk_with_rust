@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         // Used to load the 'ndkwithrust' library on application startup.
         init {
-            System.loadLibrary("hello")
+            System.loadLibrary("hellorust")
         }
     }
 }

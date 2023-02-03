@@ -55,7 +55,7 @@ dependencies {
 
 cargo {
     // Rust モジュールのパス
-    module  = "src/main/rust/hello"
+    module  = "src/main/rust/hellorust"
 
     // Rust モジュールの名称
     libname = "hello"
