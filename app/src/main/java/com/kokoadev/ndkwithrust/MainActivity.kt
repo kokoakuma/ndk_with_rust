@@ -1,8 +1,7 @@
 package com.kokoadev.ndkwithrust
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.kokoadev.ndkwithrust.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to a native method
         binding.sampleText.text = stringFromJNI()
+        binding.sampleText.text = helloNameFromJNI("kokoa")
     }
 
     /**
@@ -24,11 +24,12 @@ class MainActivity : AppCompatActivity() {
      * which is packaged with this application.
      */
     external fun stringFromJNI(): String
+    external fun helloNameFromJNI(input: String): String
 
     companion object {
         // Used to load the 'ndkwithrust' library on application startup.
         init {
-            System.loadLibrary("hellorust")
+            System.loadLibrary("hello")
         }
     }
 }
