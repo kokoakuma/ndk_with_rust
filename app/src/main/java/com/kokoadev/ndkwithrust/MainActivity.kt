@@ -15,8 +15,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Example of a call to a native method
-        binding.sampleText.text = stringFromJNI()
-        binding.sampleText.text = helloNameFromJNI("kokoa")
+//        binding.sampleText.text = stringFromJNI()
+//        binding.sampleText.text = helloNameFromJNI("kokoa")
+        binding.sampleText.text = addNumberFromJNI(1,2).toString()
     }
 
     /**
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
      */
     external fun stringFromJNI(): String
     external fun helloNameFromJNI(input: String): String
+    external fun addNumberFromJNI(input1: Int, input2: Int): Int
 
     companion object {
         // Used to load the 'ndkwithrust' library on application startup.
